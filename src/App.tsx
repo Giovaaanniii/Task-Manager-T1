@@ -5,9 +5,9 @@ function App() {
 
 
   return (
-    <>
+    <div className='project-wrapper'>
      <TaskList/>
-    </>
+    </div>
   )
 }
 

@@ -1,16 +1,20 @@
-import Button from "@mui/material/Button"
+import Button from "@mui/material/Button";
+import s from "./TaskItem.module.css";
 
 export const TaskItem = () => {
-    return(
-        <>
-        <h1>заголовок</h1>
-        <p>описание</p>
-        <div>
-            <div>категория</div>
-            <div>Статус</div>
-            <div>Приоритет</div>
-        </div>
-        <Button variant="contained">Contained</Button>
-        </>
-    )
-}
+  return (
+    <div className={s.wrapper}>
+      <div>
+        
+      </div>
+      <h1>заголовок</h1>
+      <p>описание</p>
+      <div>
+        <div>категория</div>
+        <div>Статус</div>
+        <div>Приоритет</div>
+      </div>
+      <Button variant="contained">редактировать</Button>
+    </div>
+  );
+};
