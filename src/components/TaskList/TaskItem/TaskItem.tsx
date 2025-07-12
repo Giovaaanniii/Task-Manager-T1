@@ -1,3 +1,5 @@
+import Button from "@mui/material/Button"
+
 export const TaskItem = () => {
     return(
         <>
@@ -8,7 +10,7 @@ export const TaskItem = () => {
             <div>Статус</div>
             <div>Приоритет</div>
         </div>
-        <button>Редактировать</button>
+        <Button variant="contained">Contained</Button>
         </>
     )
 }
