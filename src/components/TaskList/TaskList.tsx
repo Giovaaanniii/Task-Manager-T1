@@ -7,8 +7,7 @@ import s from "./TaskList.module.css";
 export const TaskList = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const handleAddTask = (newTask: Task) => {
-    const addTaskID = {...newTask, id: Date.now()}
-    setTasks([...tasks, addTaskID]);
+    setTasks([...tasks, newTask]);
 };
   return (
     <>

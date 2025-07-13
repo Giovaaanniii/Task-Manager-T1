@@ -9,9 +9,6 @@ interface TaskItemProps {
 export const TaskItem = ({task}: TaskItemProps) => {
   return (
     <div className={s.wrapper}>
-      <div>
-        
-      </div>
       <h1>{task.name}</h1>
       <p>{task.description}</p>
       <div>
@@ -19,7 +16,7 @@ export const TaskItem = ({task}: TaskItemProps) => {
         <div>{task.status}</div>
         <div>{task.priority}</div>
       </div>
-      <Link to="/task/:id"><Button variant="contained">редактировать</Button></Link>
+     <Link to={`/task/${task.id}`}><Button variant="contained">редактировать</Button></Link>
     </div>
   );
 };

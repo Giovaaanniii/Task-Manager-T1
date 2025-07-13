@@ -8,7 +8,7 @@ import { useState } from "react";
 import type { Task } from "./types/Task";
 
 interface Props {
-  onAddTask: (task: Task) => void; // Добавляем этот тип
+  onAddTask: (task: Task) => void;
 }
 export const AddTask = ({ onAddTask }: Props) => {
 
@@ -22,7 +22,13 @@ export const AddTask = ({ onAddTask }: Props) => {
   });
   const handlerAddTask = (e: React.FormEvent) => {
     e.preventDefault();
-    onAddTask(task);
+    
+    const newTask = ({
+      ...task,
+      id: Date.now()
+  });
+  onAddTask(newTask)
+  console.log(newTask )
     setTask({
       id: 0,
       name: "",
