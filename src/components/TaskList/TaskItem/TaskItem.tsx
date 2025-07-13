@@ -1,5 +1,6 @@
 import Button from "@mui/material/Button";
 import s from "./TaskItem.module.css";
+import { Link } from "react-router-dom";
 
 export const TaskItem = () => {
   return (
@@ -14,7 +15,7 @@ export const TaskItem = () => {
         <div>Статус</div>
         <div>Приоритет</div>
       </div>
-      <Button variant="contained">редактировать</Button>
+      <Link to="/a"><Button variant="contained">редактировать</Button></Link>
     </div>
   );
 };
