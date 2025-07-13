@@ -28,7 +28,6 @@ export const AddTask = ({ onAddTask }: Props) => {
       id: Date.now()
   });
   onAddTask(newTask)
-  console.log(newTask )
     setTask({
       id: 0,
       name: "",

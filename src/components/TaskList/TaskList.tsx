@@ -1,11 +1,14 @@
-import { useState } from "react";
 import { AddTask } from "../AddTask/AddTask";
 import type { Task } from "../AddTask/types/Task";
 import { TaskItem } from "./TaskItem/TaskItem";
 import s from "./TaskList.module.css";
 
-export const TaskList = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
+interface TaskListProps {
+  tasks: Task[];
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+}
+
+export const TaskList = ({ tasks, setTasks }: TaskListProps) => {;
   const handleAddTask = (newTask: Task) => {
     setTasks([...tasks, newTask]);
 };
