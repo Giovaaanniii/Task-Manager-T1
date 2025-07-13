@@ -15,7 +15,7 @@ export const TaskItem = () => {
         <div>Статус</div>
         <div>Приоритет</div>
       </div>
-      <Link to="/a"><Button variant="contained">редактировать</Button></Link>
+      <Link to="/task/:id"><Button variant="contained">редактировать</Button></Link>
     </div>
   );
 };
