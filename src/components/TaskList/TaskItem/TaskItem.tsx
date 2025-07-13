@@ -1,19 +1,23 @@
 import Button from "@mui/material/Button";
 import s from "./TaskItem.module.css";
 import { Link } from "react-router-dom";
+import type { Task } from "../../AddTask/types/Task";
 
-export const TaskItem = () => {
+interface TaskItemProps {
+  task: Task;
+}
+export const TaskItem = ({task}: TaskItemProps) => {
   return (
     <div className={s.wrapper}>
       <div>
         
       </div>
-      <h1>заголовок</h1>
-      <p>описание</p>
+      <h1>{task.name}</h1>
+      <p>{task.description}</p>
       <div>
-        <div>категория</div>
-        <div>Статус</div>
-        <div>Приоритет</div>
+        <div>{task.category}</div>
+        <div>{task.status}</div>
+        <div>{task.priority}</div>
       </div>
       <Link to="/task/:id"><Button variant="contained">редактировать</Button></Link>
     </div>

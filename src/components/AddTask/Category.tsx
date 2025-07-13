@@ -2,22 +2,21 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
-import { useState } from "react";
+import type { CategoryType } from "./types/Task";
 
-export const Category = () => {
-  const [category, setCategory] = useState("");
+interface CategoryProps {
+  value: CategoryType;
+  onChange: (value: CategoryType) => void;
+}
+export const Category = ({ value, onChange }: CategoryProps) => {
   const handleChange = (event: SelectChangeEvent) => {
-    setCategory(event.target.value);
+    onChange(event.target.value as CategoryType);
   };
   return (
     <>
-      <FormControl sx={{minWidth: 150 }} size="small">
+      <FormControl sx={{ minWidth: 150 }} size="small">
         <InputLabel>Категория</InputLabel>
-        <Select
-          value={category}
-          label="Категория"
-          onChange={handleChange}
-        >
+        <Select value={value} label="Категория" onChange={handleChange}>
           <MenuItem value={"Bug"}>Bug</MenuItem>
           <MenuItem value={"Feature"}>Feature</MenuItem>
           <MenuItem value={"Documentation"}>Documentation</MenuItem>

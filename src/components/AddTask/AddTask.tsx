@@ -4,24 +4,56 @@ import { Category } from "./Category";
 import { Status } from "./Status";
 import { Priority } from "./Priority";
 import Button from "@mui/material/Button";
+import { useState } from "react";
+import type { Task } from "./types/Task";
 
-export const AddTask = () => {
+interface Props {
+  onAddTask: (task: Task) => void; // Добавляем этот тип
+}
+export const AddTask = ({ onAddTask }: Props) => {
+
+  const [task,setTask ] = useState<Task>({
+    id: 0,
+    name: "",
+    description: "",
+    category: "Test",
+    status: "To Do",
+    priority: "Low",
+  });
+  const handlerAddTask = (e: React.FormEvent) => {
+    e.preventDefault();
+    onAddTask(task);
+    setTask({
+      id: 0,
+      name: "",
+      description: "",
+      category: "Bug",
+      status: "To Do",
+      priority: "Low"
+    });
+  };
+
   return (
     <form className={s.wrapper}>
       <h1 className={s.text}>Добавить задачу</h1>
       <div className={s.fields}>
-        <TextField
-          label="Задача"
-        />
-        <TextField  label="Описание задачи" multiline rows={5} />
-      </div>
+        <TextField label="Задача" value={task.name} onChange={(e) => setTask({...task, name: e.target.value})} />
+        <TextField label="Описание задачи" multiline rows={5}  value={task.description} onChange={(e) => setTask({...task, description: e.target.value})}/>
+      </div>  
       <div className={s.selects}>
-        <Category/>
-        <Status/>
-        <Priority/>
+          <Category 
+          value={task.category}
+          onChange={(newCategory) => setTask({...task, category: newCategory})}
+        />
+        <Status    value={task.status}
+          onChange={(newStatus) => setTask({...task, status: newStatus})} />
+        <Priority value={task.priority}
+          onChange={(newPriority) => setTask({...task, priority: newPriority})} />
       </div>
       <div className={s.button}>
-        <Button variant="contained">Добавить запись</Button>
+        <Button variant="contained" onClick={handlerAddTask}>
+          Добавить запись
+        </Button>
       </div>
     </form>
   );
