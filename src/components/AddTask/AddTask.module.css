@@ -25,8 +25,8 @@
 .selects {
     display: flex;
     gap: 10px;
-flex-wrap: wrap;
-justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .button {

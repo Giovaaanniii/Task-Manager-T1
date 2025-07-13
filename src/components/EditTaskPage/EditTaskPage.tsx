@@ -94,13 +94,18 @@ export const EditTaskPage = ({ tasks, setTasks }: EditTaskPageProps) => {
             }
           />
         </div>
-        <div className={s.button}>
+        
           <Link to='/'>
+          <div className={style.button}>
           <Button variant="contained" onClick={handleSave}>
             Сохранить изменения
           </Button>
+            <Button variant="contained">
+            отмена
+          </Button>
+           </div>
           </Link>
-        </div>
+       
       </form>
     </div>
   );
