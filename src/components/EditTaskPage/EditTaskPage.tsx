@@ -7,7 +7,7 @@ import { Priority } from "../AddTask/Priority";
 import { Status } from "../AddTask/Status";
 import { Category } from "../AddTask/Category";
 import { useEffect, useState } from "react";
-
+import style from "./EditTaskPage.module.css"
 interface EditTaskPageProps {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
@@ -35,8 +35,11 @@ export const EditTaskPage = ({ tasks, setTasks }: EditTaskPageProps) => {
   }
 
   return (
-    <div>
-      <h2>Редактирование задачи #{id}</h2>
+    <div >
+      <div className={style.name}>
+    <h2 >Редактирование задачи #{id}</h2>
+      </div>
+      
       <form className={s.wrapper}>
         <div className={s.fields}>
           <TextField
@@ -62,7 +65,7 @@ export const EditTaskPage = ({ tasks, setTasks }: EditTaskPageProps) => {
             }
           />
         </div>
-        <div className={s.selects}>
+        <div className={style.selects}>
           <Category
             value={editedTask.category}
             onChange={(newCategory) =>

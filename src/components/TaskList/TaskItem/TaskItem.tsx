@@ -9,14 +9,17 @@ interface TaskItemProps {
 export const TaskItem = ({task}: TaskItemProps) => {
   return (
     <div className={s.wrapper}>
-      <h1>{task.name}</h1>
+      <div className={s.textFields}>
+          <h1>{task.name}</h1>
       <p>{task.description}</p>
-      <div>
-        <div>{task.category}</div>
-        <div>{task.status}</div>
-        <div>{task.priority}</div>
       </div>
-     <Link to={`/task/${task.id}`}><Button variant="contained">редактировать</Button></Link>
+
+      <div className={s.items}>
+        <div className={s.category}>{task.category}</div>
+        <div className={s.status}>{task.status}</div>
+        <div className={s.priority}>{task.priority}</div>
+      </div>
+     <div className={s.edit}><Link to={`/task/${task.id}`}><Button  variant="contained">редактировать</Button></Link></div>
     </div>
   );
 };

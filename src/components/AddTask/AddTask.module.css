@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -8,22 +8,28 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
 }
-.text{
+
+.text {
     justify-content: center;
     display: flex;
 }
-.fields{
+
+.fields {
     padding-top: 10px;
     gap: 15px;
     display: flex;
     flex-direction: column;
     padding-bottom: 15px;
 }
-.selects{
+
+.selects {
     display: flex;
     gap: 10px;
+flex-wrap: wrap;
+justify-content: center;
 }
-.button{
+
+.button {
     padding: 20px 0 0px 0;
     display: flex;
     justify-content: center;

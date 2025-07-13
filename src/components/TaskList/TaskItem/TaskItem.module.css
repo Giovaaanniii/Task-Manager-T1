@@ -3,4 +3,44 @@
     background: rgba(255, 255, 255, 0.56);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.textFields{
+    display: flex;
+align-items: center;
+    flex-direction: column;
+}
+.textFields h1 p{
+    flex-wrap: nowrap;
+    overflow: hidden;
+    word-break: break-word; 
+    text-overflow: ellipsis; 
+}
+.items{
+    display: flex;
+    gap:20px;
+    justify-content: center ;
+    padding: 10px 0px 10px 0;
+}
+.category{
+    background-color: rgba(137, 43, 226, 0.251);
+    padding: 4px;
+    border-radius: 5px;
+}
+.status{
+    background-color: rgba(0, 255, 255, 0.424);
+        padding: 4px;
+    border-radius: 5px;
+}
+.priority{
+    background-color: rgba(0, 255, 68, 0.455);
+        padding: 4px;
+    border-radius: 5px;
+}
+.edit{
+    justify-content: center;
+    display: flex;
 }
