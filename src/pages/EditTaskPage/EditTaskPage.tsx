@@ -1,13 +1,13 @@
 import { Link, useParams } from "react-router-dom";
-import type { Task } from "../AddTask/types/Task";
+import type { Task } from "../../app/types/Task";
 import TextField from "@mui/material/TextField";
 import s from "../AddTask/AddTask.module.css";
 import Button from "@mui/material/Button";
-import { Priority } from "../AddTask/Priority";
-import { Status } from "../AddTask/Status";
-import { Category } from "../AddTask/Category";
+import { Priority } from "../../shared/Priority";
+import { Status } from "../../shared/Status";
+import { Category } from "../../shared/Category";
 import { useEffect, useState } from "react";
-import style from "./EditTaskPage.module.css"
+import style from "./EditTaskPage.module.css";
 interface EditTaskPageProps {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
@@ -35,11 +35,11 @@ export const EditTaskPage = ({ tasks, setTasks }: EditTaskPageProps) => {
   }
 
   return (
-    <div >
+    <div>
       <div className={style.name}>
-    <h2 >Редактирование задачи #{id}</h2>
+        <h2>Редактирование задачи #{id}</h2>
       </div>
-      
+
       <form className={s.wrapper}>
         <div className={s.fields}>
           <TextField
@@ -94,18 +94,15 @@ export const EditTaskPage = ({ tasks, setTasks }: EditTaskPageProps) => {
             }
           />
         </div>
-        
-          <Link to='/'>
+
+        <Link to="/">
           <div className={style.button}>
-          <Button variant="contained" onClick={handleSave}>
-            Сохранить изменения
-          </Button>
-            <Button variant="contained">
-            отмена
-          </Button>
-           </div>
-          </Link>
-       
+            <Button variant="contained" onClick={handleSave}>
+              Сохранить изменения
+            </Button>
+            <Button variant="contained">отмена</Button>
+          </div>
+        </Link>
       </form>
     </div>
   );

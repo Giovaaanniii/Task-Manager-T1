@@ -2,7 +2,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
-import type { StatusType } from "./types/Task";
+import type { StatusType } from "../app/types/Task";
 
 interface StatusProps {
   value: StatusType;

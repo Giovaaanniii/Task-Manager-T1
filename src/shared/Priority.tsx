@@ -2,7 +2,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
-import type { PriorityType } from "./types/Task";
+import type { PriorityType } from "../app/types/Task";
 
 interface PriorityProps {
   value: PriorityType;

@@ -1,12 +1,12 @@
 import TextField from "@mui/material/TextField";
 import s from "./AddTask.module.css";
-import { Category } from "./Category";
-import { Status } from "./Status";
-import { Priority } from "./Priority";
+import { Category } from "../../shared/Category";
+import { Status } from "../../shared/Status";
+import { Priority } from "../../shared/Priority";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import type { Task } from "./types/Task";
-import x from "../public/i.webp";
+import type { Task } from "../../app/types/Task";
+import x from "../../public/i.webp";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -22,8 +22,6 @@ export const AddTask = ({ onAddTask }: Props) => {
     priority: "Low",
   });
   const handlerAddTask = () => {
-
-
     const newTask = {
       ...task,
       id: Date.now(),
