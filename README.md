@@ -13,6 +13,7 @@
 - **UI-библиотека**: Material UI (v7)
 - **Линтеры**: ESLint с конфигурациями для React и TypeScript
 - **Инструменты стилизации:**:  css modules 
+- **State-менеджер**: Redux Toolkit
 
 ##  Запуск проекта
 
