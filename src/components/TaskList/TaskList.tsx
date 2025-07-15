@@ -1,21 +1,20 @@
-import { AddTask } from "../AddTask/AddTask";
+
+import { Link } from "react-router-dom";
 import type { Task } from "../AddTask/types/Task";
 import { TaskItem } from "./TaskItem/TaskItem";
 import s from "./TaskList.module.css";
 
 interface TaskListProps {
   tasks: Task[];
-  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+
 }
 
-export const TaskList = ({ tasks, setTasks }: TaskListProps) => {;
-  const handleAddTask = (newTask: Task) => {
-    setTasks([...tasks, newTask]);
-};
+export const TaskList = ({ tasks }: TaskListProps) => {;
+
   return (
     <>
     <div className={s.addTask}>
-        <AddTask onAddTask={handleAddTask} />
+          <Link to='/task/new'>добавить задачу </Link>
     </div>
     
      <div className={s.list}>
